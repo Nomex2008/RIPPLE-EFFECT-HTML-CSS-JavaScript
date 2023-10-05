@@ -11,6 +11,7 @@ document.addEventListener("click", function (e) {
         const diameter = Math.max(button.clientWidth, button.clientHeight)
         //console.log(diameter)
         const radius = diameter / 2;
+        //console.log(radius)
 
         //ripple 
         ripple.style.width = ripple.style.height = `${diameter}px`
@@ -20,6 +21,7 @@ document.addEventListener("click", function (e) {
         //console.log(ripple.style.top)
        
         ripple.classList.add('ripple');
+        //console.log(ripple.classList)
 
         //if once
         button.dataset.ripple === 'once' && button.querySelector('.ripple') ?
@@ -27,9 +29,11 @@ document.addEventListener("click", function (e) {
 
         //btn add ripple
         button.appendChild(ripple)
+        //console.log(button)
 
         //timeOUT
         const timeOut = getAnimationDuration(ripple);
+        //console.log(timeOut)
  
         //element delete
         setTimeout(() => {
@@ -42,5 +46,7 @@ document.addEventListener("click", function (e) {
             return aDuration.includes('ms') ?
                 aDuration.replace('ms', '') : aDuration.replace('s', '') * 1000;
         }
+        //console.log(getAnimationDuration())
     }
+    //console.log(targetItem.closest('[data-ripple]'))
 });
